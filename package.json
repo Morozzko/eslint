@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "custom eslint configuration",
   "main": "index.js",
+  "private": false,
   "exports": {
     ".": "./index.js",
     "./package.json": "./package.json"
