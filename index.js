@@ -31,8 +31,11 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-empty-function': 'warn',
     'no-empty-pattern': 'warn',
+    'no-debugger': 'warn',
+    'no-console': 'warn',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/display-name': 'off',
     'prettier/prettier': [
       'error',
       {
