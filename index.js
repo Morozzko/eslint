@@ -5,99 +5,81 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
     'plugin:prettier/recommended',
-    'plugin:import/warnings'
+    'plugin:import/warnings',
   ],
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'prettier',
-    'import'
-  ],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
   env: {
     browser: true,
     jasmine: true,
-    jest: true
+    jest: true,
   },
   settings: {
     react: {
       pragma: 'React',
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   root: true,
   parser: '@typescript-eslint/parser',
   rules: {
-    '@typescript-eslint/ban-ts-comment': 'warn',
+    "arrow-body-style": ["error", "as-needed"],
+    "react/self-closing-comp": "error",
+    "prefer-template": "error",
+    '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-empty-function': 'warn',
-    'no-empty-pattern': 'warn',
-    'no-debugger': 'warn',
     'no-console': 'warn',
+    'no-debugger': 'warn',
+    'no-empty-pattern': 'warn',
+    'react/display-name': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/display-name': 'off',
+    "react/jsx-curly-brace-presence": ['error', { "props": "never", "children": "ignore" }],
+    "newline-before-return": "error",
     'prettier/prettier': [
       'error',
       {
-        printWidth: 160,
+        printWidth: 120,
         singleQuote: true,
         tabWidth: 2,
         useTabs: false,
         arrowParens: 'avoid',
         semi: false,
-        bracketSameLine: false
-      }
+        bracketSameLine: false,
+      },
     ],
+    "import/no-default-export": "error",
     'import/order': [
       'warn',
       {
-        groups: [
-          'external',
-          'builtin',
-          'internal',
-          'sibling',
-          'parent',
-          'index'
-        ],
+        groups: ['external', 'builtin', 'internal', 'sibling', 'parent', 'index'],
         'newlines-between': 'never',
-        pathGroupsExcludedImportTypes: [
-          'react'
-        ],
+        pathGroupsExcludedImportTypes: ['react'],
         pathGroups: [
           {
             pattern: 'components',
-            group: 'internal'
+            group: 'internal',
           },
           {
             pattern: 'common',
-            group: 'internal'
+            group: 'internal',
           },
           {
             pattern: 'routes/ **',
-            group: 'internal'
+            group: 'internal',
           },
           {
             pattern: 'assets/**',
             group: 'internal',
-            position: 'after'
-          }
+            position: 'after',
+          },
         ],
         alphabetize: {
           order: 'asc',
-          caseInsensitive: true
-        }
-      }
-    ]
-  },
-  overrides: [
-    {
-      files: [
-        'src/**/*.ts',
-        'src/**/*.tsx'
-      ],
-      rules: {
-        'no-unused-vars': 'off'
-      }
-    }
-  ]
+          caseInsensitive: true,
+        },
+      },
+    ],
+  }
 }
